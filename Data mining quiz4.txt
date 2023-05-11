@@ -1,0 +1,3 @@
+SELECT COUNT(Customerid)
+FROM Customers
+WHERE CustomerName NOT LIKE '%son%';

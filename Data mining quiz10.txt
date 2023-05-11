@@ -1,0 +1,6 @@
+SELECT Customername, SUM(Price * quantity) as Total_Sales
+FROM Customers as c
+JOIN Orders as o on c.customerid=o.customerid
+JOIN Orderdetails as ord on o.orderid=ord.orderid
+JOIN products as p on p.productid=ord.productid
+group by CustomerName;

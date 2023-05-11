@@ -1,0 +1,10 @@
+SELECT p.SupplierID, SUM(ord.Quantity) AS TotalProductsOrdered
+FROM Products as p
+JOIN Orderdetails as ord ON ord.productid=p.productid
+JOIN Orders as o ON o.orderid=ord.orderid
+JOIN Suppliers as s ON s.supplierid = p.supplierid
+GROUP BY p.SupplierID
+ORDER BY TotalProductsOrdered DESC
+LIMIT 1;
+
+

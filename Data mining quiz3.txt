@@ -1,0 +1,6 @@
+SELECT o.ShipperID, COUNT(p.productid) AS ShippedProducts
+FROM Orders as o
+JOIN Orderdetails as ord ON ord.orderid=o.orderid
+JOIN Products as p ON p.productid = ord.productid
+WHERE o.ShipperID IN (1, 2, 3) 
+GROUP BY o.ShipperID;

@@ -1,0 +1,6 @@
+SELECT customername,city,address,postalcode,productname,orderdate,quantity,shippername
+FROM Customers as c 
+join orders as o on c.customerid=o.customerid
+join shippers as s on s.shipperid=o.shipperid
+join orderdetails as ord on ord.orderid=o.orderid
+join products as p on p.productid=ord.productid;

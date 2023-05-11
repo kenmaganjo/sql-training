@@ -1,0 +1,4 @@
+SELECT ProductName, SUM(Price * Quantity) AS Total_Sales
+FROM OrderDetails as ord
+JOIN Products as p on p.productid=ord.productid
+GROUP BY ProductName;

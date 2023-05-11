@@ -1,0 +1,5 @@
+SELECT productname, shippername
+FROM Orders as o
+JOIN Orderdetails as ord on o.orderid=ord.orderid
+JOIN Products as p on ord.productid=p.productid
+JOIN shippers as s on s.shipperid=o.shipperid
