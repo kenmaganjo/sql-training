@@ -1,4 +1,4 @@
-SELECT customername,city,address,postalcode,productname,orderdate,quantity,shippername
+SELECT customername,city,address,postalcode,productname,o.rderid,orderdate,quantity,shippername
 FROM Customers as c 
 join orders as o on c.customerid=o.customerid
 join shippers as s on s.shipperid=o.shipperid

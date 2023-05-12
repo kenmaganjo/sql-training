@@ -1,5 +1,7 @@
-SELECT Orderdate, SUM(Price * Quantity) as Total_Sales
+SELECT OrderDate, SUM(Price * quantity) AS Total_Sales
 FROM OrderDetails as ord
 JOIN orders as o on o.orderid=ord.orderid
-JOIN products as p on p.productid=ord.productid
+JOIN Products as p on p.productid=ord.productid
 GROUP BY OrderDate
+ORDER BY Total_sales desc
+

@@ -1,6 +1,7 @@
-SELECT OrderDate, SUM(Price * quantity) AS Total_Sales
+SELECT SUBSTR(OrderDate, 6,2) as months, SUM(Price * quantity) AS Total_Sales
 FROM OrderDetails as ord
 JOIN orders as o on o.orderid=ord.orderid
 JOIN Products as p on p.productid=ord.productid
-GROUP BY OrderDate
-order by Total_sales desc
+GROUP BY months
+ORDER BY Total_sales desc
+LIMIT 1;
